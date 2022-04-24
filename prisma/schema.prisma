@@ -1,6 +1,6 @@
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "mongodb"
+  url      = "mongodb://root:prisma@localhost:27017/prisma-mongo?authSource=admin&retryWrites=true&w=majority"
 }
 
 generator client {
@@ -8,14 +8,14 @@ generator client {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
   email String  @unique
   name  String?
   posts Post[]
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   title     String
