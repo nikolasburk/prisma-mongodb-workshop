@@ -23,5 +23,5 @@ model Post {
   published Boolean  @default(false)
   viewCount Int      @default(0)
   author    User?    @relation(fields: [authorId], references: [id])
-  authorId  Int?
+  authorId  String?
 }
