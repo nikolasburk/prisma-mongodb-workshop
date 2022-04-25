@@ -6,27 +6,27 @@ import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-co
 const typeDefs = `
 type Query {
   allUsers: [User!]!
-  postById(id: Int!): Post
+  postById(id: String!): Post
   feed(searchString: String, skip: Int, take: Int): [Post!]!
-  draftsByUser(id: Int!): [Post]
+  draftsByUser(id: String!): [Post]
 }
 
 type Mutation {
   signupUser(name: String, email: String!): User!
   createDraft(title: String!, content: String, authorEmail: String): Post
-  incrementPostViewCount(id: Int!): Post
-  deletePost(id: Int!): Post
+  incrementPostViewCount(id: String!): Post
+  deletePost(id: String!): Post
 }
 
 type User {
-  id: Int!
+  id: String!
   email: String!
   name: String
   posts: [Post!]!
 }
 
 type Post {
-  id: Int!
+  id: String!
   createdAt: DateTime!
   updatedAt: DateTime!
   title: String!
@@ -44,7 +44,7 @@ const resolvers = {
     allUsers: (_parent, _args, context: Context) => {
       // TODO
     },
-    postById: (_parent, args: { id: number }, context: Context) => {
+    postById: (_parent, args: { id: string }, context: Context) => {
       // TODO
     },
     feed: (
@@ -58,7 +58,7 @@ const resolvers = {
     ) => {
       // TODO
     },
-    draftsByUser: (_parent, args: { id: number }, context: Context) => {
+    draftsByUser: (_parent, args: { id: string }, context: Context) => {
       // TODO
     },
   },
@@ -79,12 +79,12 @@ const resolvers = {
     },
     incrementPostViewCount: (
       _parent,
-      args: { id: number },
+      args: { id: string },
       context: Context
     ) => {
       // TODO
     },
-    deletePost: (_parent, args: { id: number }, context: Context) => {
+    deletePost: (_parent, args: { id: string }, context: Context) => {
       // TODO
     },
   },
