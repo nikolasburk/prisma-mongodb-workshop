@@ -1,6 +1,6 @@
 datasource db {
   provider = "mongodb"
-  url      = "mongodb://root:prisma@localhost:27017/prisma-mongo?authSource=admin&retryWrites=true&w=majority"
+  url      = "mongodb://root:prisma@localhost:27017/graphql-api?authSource=admin&retryWrites=true&w=majority"
 }
 
 generator client {
