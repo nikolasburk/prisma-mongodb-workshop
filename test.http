@@ -22,15 +22,15 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/post/1/views
+PUT http://localhost:3000/post/__OBJECT_ID__/views
 
 ###
 
-PUT http://localhost:3000/publish/5
+PUT http://localhost:3000/publish/__OBJECT_ID__
 
 ###
 
-GET http://localhost:3000/user/3/drafts
+GET http://localhost:3000/user/__OBJECT_ID__/drafts
 
 ###
 
